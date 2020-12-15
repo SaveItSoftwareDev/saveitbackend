@@ -6,30 +6,27 @@ from rest_framework.generics import (
 from rest_framework import viewsets
 from .models import Perfil
 from .serializers import PerfilSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
-"""
-class PerfilListView(ListAPIView):
-    queryset = Perfil.objects.all()
-    serializer_class = PerfilSerializer
-
-class PerfilDetailView(RetrieveAPIView):
-    queryset = Perfil.objects.all()
-    serializer_class = PerfilSerializer
-
-class PerfilCreateView(CreateAPIView):
-    queryset = Perfil.objects.all()
-    serializer_class = PerfilSerializer
-
-class PerfilUpdateView(UpdateAPIView):
-    queryset = Perfil.objects.all()
-    serializer_class = PerfilSerializer
-
-class PerfilDeleteView(DestroyAPIView):
-    queryset = Perfil.objects.all()
-    serializer_class = PerfilSerializer
-    
-"""
 
 class ProfileViewSet(viewsets.ModelViewSet):
     serializer_class = PerfilSerializer
     queryset = Perfil.objects.all()
+
+
+class PerfilView(APIView):
+
+    serializer_class = PerfilSerializer
+
+    def get(self, request):
+            id = [{"Primeiro Nome:": id.primeiro_nome, "Email: ": id.email}
+            for i in Perfil.objects.all()]
+            return Response(id)
+
+    def post(self, request):
+
+        serializer = PerfilSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)

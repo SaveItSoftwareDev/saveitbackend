@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Form html do condutor</title>
+</head>
+
+<body>
+
+<form action={% url "criar_condutor" %}  method="POST">
+    {% csrf_token %}
+    Nome: <input type="text" name="Nome" value= '{% if submitbutton == "Submit" %} {{ nome }} {% endif %}'/><br><br>
+    Carta: <input type="text" name="Carta" value= '{% if submitbutton == "Submit" %} {{ carta }} {% endif %}'/><br><br>
+    <input type="Submit" name="Submit" value="Submit"/>
+</form>
+
+</body>
+</html>
