@@ -13,3 +13,8 @@ class Perfil(models.Model):
 
     def __str__(self):
         return 'Bem vindo', self.primeiro_nome
+
+
+class Categoria(models.Model):
+    id_utilizador = models.ForeignKey(Perfil, on_delete=models.CASCADE)
+    nome = models.CharField(max_length=20, blank=True)

@@ -1,5 +1,5 @@
 from django.urls import path
-from apiSaveIt.views import ProfileViewSet, PerfilView
+from apiSaveIt.views import ProfileViewSet
 from rest_framework.routers import DefaultRouter
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -26,10 +26,19 @@ schema_view = get_schema_view(
 router = DefaultRouter()
 router.register(r'', ProfileViewSet, basename='utilizador')
 urlpatterns = [
-    path('api/', PerfilView.as_view(), name="perfil"),
+    path('perfis/', views.criar_perfil),
+    path('perfis/<str:perfil_id>/', views.perfil_detail),
+    path('categorias/', views.criar_categoria),
     re_path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
 
+
+
+
+from rest_framework.routers import DefaultRouter
+from .views import ProfileViewSet
+router = DefaultRouter()
+router.register('perfis', ProfileViewSet, basename='perfil_viewsets')
 urlpatterns += router.urls
 
 
