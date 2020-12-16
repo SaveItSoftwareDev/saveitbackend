@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'drf_yasg',
     'apiSaveIt',
     'rest_framework',
     'rest_framework.authentication',
