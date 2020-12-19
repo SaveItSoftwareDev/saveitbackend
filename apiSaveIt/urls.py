@@ -29,6 +29,7 @@ urlpatterns = [
     path('perfis/', views.criar_perfil),
     path('perfis/<int:perfil_id>/', views.perfil_detalhe),
     path('categorias/', views.criar_categoria),
+    path('categorias/<int:categoria_id>/', views.categoria_detalhe),
     path('sub_categorias/', views.criar_subcategoria),
     path('planeamentos/', views.criar_planeamento),
     path('planeamentos/<int:planeamento_id>/', views.planeamento_detalhe),

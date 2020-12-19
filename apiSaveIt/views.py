@@ -1,8 +1,4 @@
-from rest_framework.generics import (
-    ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
-)
-# Create your views here.
-
+#Imports necessários de módulos a serem utilizados no projeto
 
 from django.http import HttpResponse, JsonResponse
 from rest_framework.parsers import JSONParser
@@ -23,6 +19,9 @@ from rest_framework.decorators import api_view
 perfil_response = openapi.Response('Descrição da resposta', serializers.PerfilSerializer)
 @swagger_auto_schema(method='get', responses={200: perfil_response},)
 @swagger_auto_schema(method='post',responses={200: perfil_response})
+
+
+#Function based view para a criação de um perfil de um utilizador. Transforma num ficheiro Json e depois envia para a BD
 
 @api_view(['GET', 'POST'])
 
@@ -86,6 +85,20 @@ def criar_categoria(request):
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
     #return JsonResponse(response_data, safe=False, json_dumps_params={'ensure_ascii': False})
+
+def categoria_detalhe(request, categoria_id):
+    try:
+        categoria = Categoria.objects.get(pk=categoria_id)
+    except Categoria.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = serializers.CategoriaSerializer(categoria)
+        return Response(serializer.data)
+
+    elif request.method == 'DELETE':
+        categoria.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 @api_view(['GET', 'POST'])
