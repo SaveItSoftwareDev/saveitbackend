@@ -46,7 +46,7 @@ def criar_perfil(request):
 @api_view(['GET', 'PUT', 'DELETE'])
 def perfil_detalhe(request, perfil_id):
     """
-    get: Retorna um restaurante (com function based views)
+    get: Retorna um perfil (com function based views)
     put: Atualiza um novo restaurante (com function based views)
     delete: Elimina um restaurante (com function based views).
     """
@@ -76,7 +76,7 @@ def criar_categoria(request):
         categorias = Categoria.objects.all()
         serializer = serializers.CategoriaSerializer(categorias, many=True)
         # print(serializer.data)
-        return JsonResponse(serializer.data, safe=False)
+        return JsonResponse(serializer.data, safe=False, json_dumps_params={'ensure_ascii': False})
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)
@@ -85,6 +85,7 @@ def criar_categoria(request):
             serializer.save()
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
+    #return JsonResponse(response_data, safe=False, json_dumps_params={'ensure_ascii': False})
 
 
 @api_view(['GET', 'POST'])
@@ -93,7 +94,7 @@ def criar_subcategoria(request):
         sub_categorias = SubCategoria.objects.all()
         serializer = serializers.SubCategoriaSerializer(sub_categorias, many=True)
         # print(serializer.data)
-        return JsonResponse(serializer.data, safe=False)
+        return JsonResponse(serializer.data, safe=False, json_dumps_params={'ensure_ascii': False})
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)
@@ -110,7 +111,7 @@ def criar_planeamento(request):
         planeamentos = Planeamento.objects.all()
         serializer = serializers.PlaneamentoSerializer(planeamentos, many=True)
         # print(serializer.data)
-        return JsonResponse(serializer.data, safe=False)
+        return JsonResponse(serializer.data, safe=False, json_dumps_params={'ensure_ascii': False})
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)
