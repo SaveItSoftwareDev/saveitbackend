@@ -26,6 +26,10 @@ perfil_response = openapi.Response('Descrição da resposta', serializers.Perfil
 @api_view(['GET', 'POST'])
 
 def criar_perfil(request):
+    """
+    get: Retorna todos os perfis, baseado em function based views
+    post: Cria um novo perfil, baseado em function based views
+    """
     if request.method == 'GET':
         perfis = Perfil.objects.all()
         serializer = serializers.PerfilSerializer(perfis, many=True)
@@ -45,9 +49,9 @@ def criar_perfil(request):
 @api_view(['GET', 'PUT', 'DELETE'])
 def perfil_detalhe(request, perfil_id):
     """
-    get: Retorna um perfil (com function based views)
-    put: Atualiza um novo restaurante (com function based views)
-    delete: Elimina um restaurante (com function based views).
+    get: Retorna um perfil
+    post: Atualiza um perfil baseado num ID
+    delete: Elimina um perfil baseado num ID
     """
     try:
         perfil = Perfil.objects.get(pk=perfil_id)
