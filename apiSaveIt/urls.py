@@ -47,6 +47,7 @@ router.register('perfis', ProfileViewSet, basename='perfil_viewsets')
 router.register('categorias', CategoriaViewSet, basename='categoria_viewsets')
 router.register('sub_categorias', SubCategoriaViewSet, basename='sub_categoria_viewsets')
 router.register('planeamentos', PlaneamentoViewSet, basename='planeamento_viewsets')
+router.register('contas', PlaneamentoViewSet, basename='contas_viewsets')
 urlpatterns += router.urls
 
 
