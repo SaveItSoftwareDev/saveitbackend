@@ -10,11 +10,11 @@ from . import views
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="SaveIt API yasg swagger",
-      default_version='v1',
+      title="SaveIt API",
+      default_version='V2',
       description="SaveIt API",
       terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="ljsgmg@google.com"),
+      contact=openapi.Contact(email="SaveIt@google.com"),
       license=openapi.License(name="BSD License"),
    ),
    public=True,
@@ -31,8 +31,11 @@ urlpatterns = [
     path('categorias/', views.criar_categoria),
     path('categorias/<int:categoria_id>/', views.categoria_detalhe),
     path('sub_categorias/', views.criar_subcategoria),
+    path('sub_categorias7<int:sub_categoria_id>', views.subcategoria_detalhe),
     path('planeamentos/', views.criar_planeamento),
     path('planeamentos/<int:planeamento_id>/', views.planeamento_detalhe),
+    path('contas/', views.criar_conta),
+    path('contas/<int:conta_id>/', views.conta_detalhe),
     re_path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
 

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Perfil, Categoria, SubCategoria, Planeamento
+from .models import Perfil, Categoria, SubCategoria, Planeamento, Conta
 
 class PerfilSerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,3 +20,8 @@ class PlaneamentoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Planeamento
         fields = ['id_utilizador', 'montante_limite', 'categoria', 'sub_categoria', 'prazo']
+
+class ContaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Conta
+        fields = ['id_utilizador', 'nome', 'saldoIncial', 'tipo']
