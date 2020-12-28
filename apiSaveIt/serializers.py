@@ -25,7 +25,7 @@ class PlaneamentoSerializer(serializers.ModelSerializer):
 class ContaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Conta
-        fields = ['id_utilizador', 'nome', 'saldoIncial', 'tipo']
+        fields = ['id_utilizador', 'nome', 'saldo', 'tipo']
 
 class InvestSerializer(serializers.ModelSerializer):
     class Meta:
@@ -40,4 +40,4 @@ class RegistoSerializer(serializers.ModelSerializer):
 class AlertSerializer(serializers.ModelSerializer):
     class Meta:
         model = Alert
-        fields = ['id_planeamento', 'id_utilizador', 'id_categoria', 'id_sub_categoria', 'descricao', 'datainicial', 'datafinal', 'montante', 'montantelimite']
+        fields = ['id_planeamento', 'id_utilizador', 'id_categoria', 'id_sub_categoria', 'descricao', 'dataInicial', 'dataFinal', 'montante', 'montanteLimite']

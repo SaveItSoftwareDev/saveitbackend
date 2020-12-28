@@ -47,7 +47,7 @@ class Planeamento(models.Model):
 class Conta(models.Model):
     id_utilizador = models.ForeignKey(Perfil, on_delete=models.CASCADE)
     nome = models.CharField(max_length=20, blank=False)
-    saldo_inicial = models.DecimalField(default=0, max_digits=1000, decimal_places=2, blank=True)
+    saldo = models.DecimalField(max_digits=1000, decimal_places=2, blank=True)
     tipo = models.CharField(max_length=20, blank=False)
 
     # Falta implementar enumerador
@@ -64,7 +64,7 @@ class Invest(models.Model):
     #tipo = models.CharField() ACHO QUE PODEMOS DEIXAR ISTO CAIR
 
     def __str__(self):
-        return 'Planeamento: {} {} {}'.format(self.id_utilizador, self.nome, self.montante, self.numero,self.data,self.tipo)
+        return 'Investimento: {} {} {}'.format(self.id_utilizador, self.nome, self.montante, self.numero,self.data,self.tipo)
 
 class Registo(models.Model):
     id_conta = models.ForeignKey(Conta, on_delete=models.CASCADE)
@@ -77,6 +77,9 @@ class Registo(models.Model):
     data = models.DateField()
     #recorrencia = models.CharField(max_length=30, blank=False) ACHO QUE PODEMOS DEIXAR ISTO CAIR
 
+    def __str__(self):
+        return 'Planeamento: {} {} {}'.format(self.id_conta, self.id_utilizador, self.tipo, self.descricao, self.categoria,self.sub_categoria,self.montante, self.data)
+
 class Alert(models.Model):
     id_planeamento = models.ForeignKey(Invest, on_delete=models.CASCADE)
     id_utilizador = models.ForeignKey(Perfil, on_delete=models.CASCADE)
@@ -87,3 +90,7 @@ class Alert(models.Model):
     dataFinal = models.DateField()
     montante = models.DecimalField(max_digits=30, decimal_places=2, blank=False)
     montanteLimite = models.DecimalField(max_digits=30, decimal_places=2, blank=False)
+
+    def __str__(self):
+        return 'Alerta: {} {} {}'.format(self.id_planeamento, self.id_utilizador, self.id_categoria, self.id_sub_categoria, self.descricao,
+                                          self.dataInicial, self.dataFinal, self.montante, self.montanteLimite)
