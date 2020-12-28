@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Perfil, Categoria, SubCategoria, Planeamento, Conta
+from .models import Perfil, Categoria, SubCategoria, Planeamento, Conta, Invest, Registo, Alert
+
 
 class PerfilSerializer(serializers.ModelSerializer):
     class Meta:
@@ -25,3 +26,18 @@ class ContaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Conta
         fields = ['id_utilizador', 'nome', 'saldoIncial', 'tipo']
+
+class InvestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Invest
+        fields = ['id_utilizador', 'nome', 'montante', 'numero', 'data']
+
+class RegistoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Registo
+        fields = ['id_conta', 'id_utilizador', 'tipo', 'descricao', 'categoria', 'sub_categoria', 'montante', 'data']
+
+class AlertSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Alert
+        fields = ['id_planeamento', 'id_utilizador', 'id_categoria', 'id_sub_categoria', 'descricao', 'datainicial', 'datafinal', 'montante', 'montantelimite']

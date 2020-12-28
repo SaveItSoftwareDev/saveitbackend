@@ -6,8 +6,9 @@ from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
 from . import serializers
 from rest_framework import viewsets
-from .models import Perfil, Categoria, SubCategoria, Planeamento, Conta
-from .serializers import PerfilSerializer, CategoriaSerializer, SubCategoriaSerializer, PlaneamentoSerializer, ContaSerializer
+from .models import Perfil, Categoria, SubCategoria, Planeamento, Conta, Invest, Registo, Alert
+from .serializers import PerfilSerializer, CategoriaSerializer, SubCategoriaSerializer, PlaneamentoSerializer, \
+    ContaSerializer, InvestSerializer, RegistoSerializer, AlertSerializer
 
 from django.http import Http404
 from rest_framework import status
@@ -233,6 +234,127 @@ def conta_detalhe(request, conta_id):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
+@api_view(['GET', 'POST'])
+
+def criar_invest(request):
+    """
+    GET: Retorna todos os investimentos
+    POST: Cria um novo investimento
+    """
+    if request.method == 'GET':
+        invest = Invest.objects.all()
+        serializer = serializers.InvestSerializer(invest, many=True)
+        # print(serializer.data)
+        return JsonResponse(serializer.data, safe=False)
+
+    elif request.method == 'POST':
+        data = JSONParser().parse(request)
+        serializer = serializers.InvestSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status=201)
+        return JsonResponse(serializer.errors, status=400)
+
+def invest_detalhe(request, invest_id):
+    """
+    GET: Retorna um registo baseado num ID
+    PATCH: Altera um registo baseado num ID
+    DELETE: Elimina um registo baseado num ID
+    """
+    try:
+        invest = Invest.objects.get(pk=invest_id)
+    except Invest.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = serializers.InvestSerializer(invest)
+        return Response(serializer.data)
+
+    elif request.method == 'DELETE':
+        invest.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET', 'POST'])
+
+def criar_registo(request):
+    """
+    GET: Retorna todos os registos
+    POST: Cria um novo registo
+    """
+    if request.method == 'GET':
+        registo = Registo.objects.all()
+        serializer = serializers.RegistoSerializer(registo, many=True)
+        # print(serializer.data)
+        return JsonResponse(serializer.data, safe=False)
+
+    elif request.method == 'POST':
+        data = JSONParser().parse(request)
+        serializer = serializers.RegistoSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status=201)
+        return JsonResponse(serializer.errors, status=400)
+
+def invest_detalhe(request, registo_id):
+    """
+    GET: Retorna um registo baseado num ID
+    PATCH: Altera um registo baseado num ID
+    DELETE: Elimina um registo baseado num ID
+    """
+    try:
+        registo = Registo.objects.get(pk=registo_id)
+    except Invest.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = serializers.RegistoSerializer(registo)
+        return Response(serializer.data)
+
+    elif request.method == 'DELETE':
+        registo.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET', 'POST'])
+
+def criar_alert(request):
+    """
+    GET: Retorna todos os alertas
+    POST: Cria um novo alertas
+    """
+    if request.method == 'GET':
+        alert = Registo.objects.all()
+        serializer = serializers.AlertSerializer(alert, many=True)
+        # print(serializer.data)
+        return JsonResponse(serializer.data, safe=False)
+
+    elif request.method == 'POST':
+        data = JSONParser().parse(request)
+        serializer = serializers.AlertSerializer(data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data, status=201)
+        return JsonResponse(serializer.errors, status=400)
+
+def alert_detalhe(request, alert_id):
+    """
+    GET: Retorna um registo baseado num ID
+    PATCH: Altera um registo baseado num ID
+    DELETE: Elimina um registo baseado num ID
+    """
+    try:
+        alert = Alert.objects.get(pk=alert_id)
+    except Alert.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = serializers.RegistoSerializer(alert)
+        return Response(serializer.data)
+
+    elif request.method == 'DELETE':
+        alert.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
 class ProfileViewSet(viewsets.ModelViewSet):
     serializer_class = PerfilSerializer
     queryset = Perfil.objects.all()
@@ -253,4 +375,15 @@ class ContaViewSet(viewsets.ModelViewSet):
     serializer_class = ContaSerializer
     queryset = Conta.objects.all()
 
+class InvestViewSet(viewsets.ModelViewSet):
+    serializer_class = InvestSerializer
+    queryset = Invest.objects.all()
+
+class RegistoViewSet(viewsets.ModelViewSet):
+    serializer_class = RegistoSerializer
+    queryset = Invest.objects.all()
+
+class AlertViewSet(viewsets.ModelViewSet):
+    serializer_class = AlertSerializer
+    queryset = Invest.objects.all()
 

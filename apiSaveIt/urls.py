@@ -1,5 +1,6 @@
 from django.urls import path
-from apiSaveIt.views import ProfileViewSet, CategoriaViewSet, SubCategoriaViewSet, PlaneamentoViewSet
+from apiSaveIt.views import ProfileViewSet, CategoriaViewSet, SubCategoriaViewSet, PlaneamentoViewSet, ContaViewSet, \
+    InvestViewSet, AlertViewSet, RegistoViewSet
 from rest_framework.routers import DefaultRouter
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -36,6 +37,12 @@ urlpatterns = [
     path('planeamentos/<int:planeamento_id>/', views.planeamento_detalhe),
     path('contas/', views.criar_conta),
     path('contas/<int:conta_id>/', views.conta_detalhe),
+    path('investimento/', views.criar_invest),
+    path('investimento/<int:invest_id>/', views.invest_detalhe),
+    path('registo/', views.criar_registo),
+    path('registo/<int:registo_id>/', views.invest_detalhe),
+    path('alertas/', views.criar_alert),
+    path('alertas/<int:alert_id>/', views.alert_detalhe),
     re_path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
 
@@ -48,6 +55,9 @@ router.register('categorias', CategoriaViewSet, basename='categoria_viewsets')
 router.register('sub_categorias', SubCategoriaViewSet, basename='sub_categoria_viewsets')
 router.register('planeamentos', PlaneamentoViewSet, basename='planeamento_viewsets')
 router.register('contas', ContaViewSet, basename='contas_viewsets')
+router.register('investimento', InvestViewSet, basename='investimento_viewsets')
+router.register('registo', RegistoViewSet, basename='registo_viewsets')
+router.register('alertas', AlertViewSet, basename='alertas_viewsets')
 urlpatterns += router.urls
 
 

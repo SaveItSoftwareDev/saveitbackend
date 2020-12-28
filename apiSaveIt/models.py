@@ -54,3 +54,36 @@ class Conta(models.Model):
 
     def __str__(self):
         return 'Conta: {} {} {}'.format(self.id_utilizador, self.nome, self.saldo_inicial, self.tipo)
+
+class Invest(models.Model):
+    nome = models.CharField(max_length=20, blank=False)
+    id_utilizador = models.ForeignKey(Perfil, on_delete=models.CASCADE)
+    montante = models.DecimalField(max_digits=10, decimal_places=2, blank=False)
+    numero = models.IntegerField(blank=False)
+    data = models.DateField()
+    #tipo = models.CharField() ACHO QUE PODEMOS DEIXAR ISTO CAIR
+
+    def __str__(self):
+        return 'Planeamento: {} {} {}'.format(self.id_utilizador, self.nome, self.montante, self.numero,self.data,self.tipo)
+
+class Registo(models.Model):
+    id_conta = models.ForeignKey(Conta, on_delete=models.CASCADE)
+    id_utilizador = models.ForeignKey(Perfil, on_delete=models.CASCADE)
+    tipo = models.CharField(max_length=30, blank=False)
+    descricao = models.CharField(max_length=30, blank=False)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    sub_categoria = models.ForeignKey(SubCategoria, on_delete=models.CASCADE)
+    montante = models.DecimalField(max_digits=30, decimal_places=2, blank=False)
+    data = models.DateField()
+    #recorrencia = models.CharField(max_length=30, blank=False) ACHO QUE PODEMOS DEIXAR ISTO CAIR
+
+class Alert(models.Model):
+    id_planeamento = models.ForeignKey(Invest, on_delete=models.CASCADE)
+    id_utilizador = models.ForeignKey(Perfil, on_delete=models.CASCADE)
+    id_categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    id_sub_categoria = models.ForeignKey(SubCategoria, on_delete=models.CASCADE)
+    descricao = models.CharField(max_length=30, blank=False)
+    dataInicial = models.DateField()
+    dataFinal = models.DateField()
+    montante = models.DecimalField(max_digits=30, decimal_places=2, blank=False)
+    montanteLimite = models.DecimalField(max_digits=30, decimal_places=2, blank=False)
