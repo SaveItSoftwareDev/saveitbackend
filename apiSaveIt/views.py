@@ -337,9 +337,9 @@ def criar_alert(request):
 
 def alert_detalhe(request, alert_id):
     """
-    GET: Retorna um registo baseado num ID
-    PATCH: Altera um registo baseado num ID
-    DELETE: Elimina um registo baseado num ID
+    GET: Retorna um alerta baseado num ID
+    PATCH: Altera um alerta baseado num ID
+    DELETE: Elimina um alerta baseado num ID
     """
     try:
         alert = Alert.objects.get(pk=alert_id)
