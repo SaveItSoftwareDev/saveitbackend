@@ -47,7 +47,7 @@ class Planeamento(models.Model):
 class Conta(models.Model):
     id_utilizador = models.ForeignKey(Perfil, on_delete=models.CASCADE)
     nome = models.CharField(max_length=20, blank=False)
-    saldo = models.DecimalField(max_digits=1000, decimal_places=2, blank=True)
+    saldo = models.DecimalField(default=0, max_digits=1000, decimal_places=2, blank=True)
     tipo = models.CharField(max_length=20, blank=False)
 
     # Falta implementar enumerador

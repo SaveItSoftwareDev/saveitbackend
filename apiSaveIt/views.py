@@ -60,11 +60,11 @@ def perfil_detalhe(request, perfil_id):
 
     if request.method == 'GET':
         serializer = serializers.PerfilSerializer(perfil)
-        return Response(serializer.data)
+        return JsonResponse(serializer.data)
 
     elif request.method == 'DELETE':
         perfil.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return JsonResponse(status=status.HTTP_204_NO_CONTENT)
 
 
 categoria_response = openapi.Response('Descrição da resposta', serializers.CategoriaSerializer)
@@ -106,11 +106,11 @@ def categoria_detalhe(request, categoria_id):
 
     if request.method == 'GET':
         serializer = serializers.CategoriaSerializer(categoria)
-        return Response(serializer.data)
+        return JsonResponse(serializer.data)
 
     elif request.method == 'DELETE':
         categoria.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return JsonResponse(status=status.HTTP_204_NO_CONTENT)
 
 
 @api_view(['GET', 'POST'])
@@ -146,11 +146,11 @@ def subcategoria_detalhe(request, sub_categoria_id):
 
     if request.method == 'GET':
         serializer = serializers.SubCategoriaSerializer(sub_categoria)
-        return Response(serializer.data)
+        return JsonResponse(serializer.data)
 
     elif request.method == 'DELETE':
         sub_categoria.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return JsonResponse(status=status.HTTP_204_NO_CONTENT)
 
 
 @api_view(['GET', 'POST'])
@@ -187,11 +187,11 @@ def planeamento_detalhe(request, planeamento_id):
 
     if request.method == 'GET':
         serializer = serializers.PlaneamentoSerializer(planeamento)
-        return Response(serializer.data)
+        return JsonResponse(serializer.data)
 
     elif request.method == 'DELETE':
         planeamento.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return JsonResponse(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET', 'POST'])
 def criar_conta(request):
@@ -227,11 +227,11 @@ def conta_detalhe(request, conta_id):
 
     if request.method == 'GET':
         serializer = serializers.ContaSerializer(contas)
-        return Response(serializer.data)
+        return JsonResponse(serializer.data)
 
     elif request.method == 'DELETE':
         contas.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return JsonResponse(status=status.HTTP_204_NO_CONTENT)
 
 
 @api_view(['GET', 'POST'])
@@ -268,11 +268,11 @@ def invest_detalhe(request, invest_id):
 
     if request.method == 'GET':
         serializer = serializers.InvestSerializer(invest)
-        return Response(serializer.data)
+        return JsonResponse(serializer.data)
 
     elif request.method == 'DELETE':
         invest.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return JsonResponse(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET', 'POST'])
 
@@ -308,11 +308,11 @@ def invest_detalhe(request, registo_id):
 
     if request.method == 'GET':
         serializer = serializers.RegistoSerializer(registo)
-        return Response(serializer.data)
+        return JsonResponse(serializer.data)
 
     elif request.method == 'DELETE':
         registo.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return JsonResponse(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET', 'POST'])
 
@@ -348,11 +348,11 @@ def alert_detalhe(request, alert_id):
 
     if request.method == 'GET':
         serializer = serializers.RegistoSerializer(alert)
-        return Response(serializer.data)
+        return JsonResponse(serializer.data)
 
     elif request.method == 'DELETE':
         alert.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return JsonResponse(status=status.HTTP_204_NO_CONTENT)
 
 
 class ProfileViewSet(viewsets.ModelViewSet):
