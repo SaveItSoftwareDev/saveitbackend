@@ -8,6 +8,8 @@ from rest_framework import permissions
 from django.urls import re_path
 from django.conf.urls import url
 from . import views
+from django.contrib import admin
+from django.urls import path, include
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -38,11 +40,11 @@ urlpatterns = [
     path('contas/', views.criar_conta),
     path('contas/<int:conta_id>/', views.conta_detalhe),
     path('investimento/', views.criar_invest),
-    path('investimento/<int:invest_id>/', views.invest_detalhe),
     path('registo/', views.criar_registo),
     path('registo/<int:registo_id>/', views.invest_detalhe),
     path('alertas/', views.criar_alert),
     path('alertas/<int:alert_id>/', views.alert_detalhe),
+    path('accounts/', include('django.contrib.auth.urls')),
     re_path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
 

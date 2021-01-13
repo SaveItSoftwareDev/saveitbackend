@@ -7,10 +7,8 @@ from rest_framework.response import Response
 from . import serializers
 from rest_framework import viewsets
 from .models import Perfil, Categoria, SubCategoria, Planeamento, Conta, Invest, Registo, Alert
-from .serializers import PerfilSerializer, CategoriaSerializer, SubCategoriaSerializer, PlaneamentoSerializer, \
-    ContaSerializer, InvestSerializer, RegistoSerializer, AlertSerializer
+from .serializers import PerfilSerializer, CategoriaSerializer, SubCategoriaSerializer, PlaneamentoSerializer, ContaSerializer, InvestSerializer, RegistoSerializer, AlertSerializer
 
-from django.http import Http404
 from rest_framework import status
 
 from drf_yasg import openapi
@@ -295,7 +293,7 @@ def criar_registo(request):
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
 
-def invest_detalhe(request, registo_id):
+def registo_detalhe(request, registo_id):
     """
     GET: Retorna um registo baseado num ID
     PATCH: Altera um registo baseado num ID
@@ -381,9 +379,9 @@ class InvestViewSet(viewsets.ModelViewSet):
 
 class RegistoViewSet(viewsets.ModelViewSet):
     serializer_class = RegistoSerializer
-    queryset = Invest.objects.all()
+    queryset = Registo.objects.all()
 
 class AlertViewSet(viewsets.ModelViewSet):
     serializer_class = AlertSerializer
-    queryset = Invest.objects.all()
+    queryset = Alert.objects.all()
 

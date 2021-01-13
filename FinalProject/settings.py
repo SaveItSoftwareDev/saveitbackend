@@ -38,13 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'drf_yasg',
     'apiSaveIt',
     'rest_framework',
     'rest_framework.authentication',
-
-
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -86,7 +84,7 @@ WSGI_APPLICATION = 'FinalProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'SaveIt2',
+        'NAME': 'SaveIt3',
         'USER': 'postgres',
         'PASSWORD': 'admin',
         'HOST': 'localhost',
