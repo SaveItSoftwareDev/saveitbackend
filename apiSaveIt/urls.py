@@ -1,6 +1,7 @@
 from django.urls import path
-from apiSaveIt.views import ProfileViewSet, CategoriaViewSet, SubCategoriaViewSet, PlaneamentoViewSet, ContaViewSet, \
+from .views import ProfileViewSet, CategoriaViewSet, SubCategoriaViewSet, PlaneamentoViewSet, ContaViewSet, \
     InvestViewSet, AlertViewSet, RegistoViewSet
+from rest_framework_jwt.views import obtain_jwt_token
 from rest_framework.routers import DefaultRouter
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -10,6 +11,7 @@ from django.conf.urls import url
 from . import views
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework_jwt.views import obtain_jwt_token
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -29,6 +31,7 @@ schema_view = get_schema_view(
 router = DefaultRouter()
 router.register(r'', ProfileViewSet, basename='utilizador')
 urlpatterns = [
+
     path('perfis/', views.criar_perfil),
     path('perfis/<int:perfil_id>/', views.perfil_detalhe),
     path('categorias/', views.criar_categoria),
@@ -47,6 +50,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     re_path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
+
 
 
 from rest_framework.routers import DefaultRouter

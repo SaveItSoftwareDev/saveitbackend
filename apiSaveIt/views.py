@@ -1,13 +1,25 @@
 #Imports necessários de módulos a serem utilizados no projeto
 
+from django.http import HttpResponseRedirect
 from django.http import HttpResponse, JsonResponse
 from rest_framework.parsers import JSONParser
+from rest_framework.views import APIView
+from .serializers import UserSerializer, UserSerializerWithToken
+from rest_framework.decorators import api_view
+from rest_framework import permissions, status
+from django.contrib.auth.models import User
+
+from rest_framework import permissions, status
+from rest_framework.response import Response
+
+
 
 from rest_framework.response import Response
+
 from . import serializers
 from rest_framework import viewsets
 from .models import Perfil, Categoria, SubCategoria, Planeamento, Conta, Invest, Registo, Alert
-from .serializers import PerfilSerializer, CategoriaSerializer, SubCategoriaSerializer, PlaneamentoSerializer, ContaSerializer, InvestSerializer, RegistoSerializer, AlertSerializer
+from .serializers import PerfilSerializer, CategoriaSerializer, SubCategoriaSerializer, PlaneamentoSerializer, ContaSerializer, InvestSerializer, RegistoSerializer, AlertSerializer, UserSerializer, UserSerializerWithToken
 
 from rest_framework import status
 
@@ -43,6 +55,7 @@ def criar_perfil(request):
             serializer.save()
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
+
 
 
 def perfil_detalhe(request, perfil_id):

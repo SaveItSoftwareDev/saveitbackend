@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="813258f4-4ac1-4ae7-bd9e-5e57e6164fc1" name="Default Changelist" comment="correção da visualizacao de dados em formato json">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FinalProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/FinalProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/.idea/apiSaveIt.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/.idea/workspace.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="bb39a19d-5220-4c85-b4e3-c670f883afbe" />
+  <component name="ProjectId" id="1lf5G2k3QBUnok8VNQRjO8gjZ8r" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tiago\PycharmProjects\backend\saveitbackend\apiSaveIt" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tiago\PycharmProjects\backend\saveitbackend\templates\htmlforms" />
+      <recent name="C:\Users\tiago\PycharmProjects\backend\saveitbackend" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed (1)" type="Python.DjangoServer" factoryName="Django server" nameIsGenerated="true">
+      <module name="FinalProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\tiago\PycharmProjects\FinalProject\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/apiSaveIt" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="813258f4-4ac1-4ae7-bd9e-5e57e6164fc1" name="Default Changelist" comment="" />
+      <created>1607975205401</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607975205401</updated>
+      <workItem from="1607975206615" duration="5258000" />
+      <workItem from="1608033989220" duration="2037000" />
+      <workItem from="1608137214125" duration="268000" />
+      <workItem from="1608138680123" duration="1206000" />
+      <workItem from="1608143953841" duration="892000" />
+      <workItem from="1608144885818" duration="44000" />
+      <workItem from="1608147037709" duration="757000" />
+      <workItem from="1608147899011" duration="75000" />
+      <workItem from="1608147975778" duration="7401000" />
+      <workItem from="1608242016998" duration="4758000" />
+      <workItem from="1608252768553" duration="713000" />
+      <workItem from="1608397402972" duration="3509000" />
+      <workItem from="1608417933445" duration="1461000" />
+      <workItem from="1608476687684" duration="1991000" />
+      <workItem from="1608574321711" duration="5860000" />
+      <workItem from="1608587181732" duration="1723000" />
+      <workItem from="1609845454109" duration="1725000" />
+      <workItem from="1610392386122" duration="2491000" />
+      <workItem from="1610564688028" duration="159000" />
+      <workItem from="1610565126689" duration="595000" />
+      <workItem from="1610568924507" duration="643000" />
+      <workItem from="1610628193568" duration="1589000" />
+      <workItem from="1610812576642" duration="836000" />
+      <workItem from="1610813437375" duration="257000" />
+      <workItem from="1610813850074" duration="1326000" />
+    </task>
+    <task id="LOCAL-00001" summary="atualizacao nos modelos e dados na bd">
+      <created>1608398027126</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608398027126</updated>
+    </task>
+    <task id="LOCAL-00002" summary="correção da visualizacao de dados em formato json">
+      <created>1608398603759</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608398603759</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="atualizacao nos modelos e dados na bd" />
+    <MESSAGE value="correção da visualizacao de dados em formato json" />
+    <option name="LAST_COMMIT_MESSAGE" value="correção da visualizacao de dados em formato json" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="508" y="236" key="#Notifications" timestamp="1610813456011">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="508" y="236" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1610813456011" />
+    <state x="223" y="0" width="1089" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610815107567">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="0" width="1089" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1610815107567" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1610815141805">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610815141805" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1610815187397">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610815187397" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1610815187396">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610815187396" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1610815187396">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610815187396" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1610815187396">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610815187396" />
+    <state x="532" y="115" key="RollbackChangesDialog" timestamp="1610629893295">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="532" y="115" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1610629893295" />
+    <state x="117" y="40" key="SettingsEditor" timestamp="1610813488223">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="117" y="40" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1610813488223" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608587389235">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608587389235" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608587220321">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1608587220321" />
+  </component>
+</project>

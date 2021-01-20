@@ -41,9 +41,11 @@ INSTALLED_APPS = [
     'drf_yasg',
     'apiSaveIt',
     'rest_framework',
-    'rest_framework.authentication',
+    'rest_framework.authtoken',
+    'djoser',
     'accounts',
-]
+
+    ]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -55,6 +57,19 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
+
+DJOSER = {
+    "USER_ID_FIELD": "username"
+}
 
 ROOT_URLCONF = 'FinalProject.urls'
 
@@ -84,9 +99,9 @@ WSGI_APPLICATION = 'FinalProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'SaveIt3',
+        'NAME': 'teste123',
         'USER': 'postgres',
-        'PASSWORD': 'admin',
+        'PASSWORD': 'Tiagosilva7101',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -130,6 +145,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:8000',

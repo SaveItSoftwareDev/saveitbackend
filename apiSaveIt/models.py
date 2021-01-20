@@ -1,16 +1,21 @@
 from django.db import models
-from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
+from django.contrib.auth.models import User
+
 
 class Perfil(models.Model):
-    primeiro_nome = models.CharField(max_length=20, blank=False)
-    ultimo_nome = models.CharField(max_length=20, blank=False)
-    email = models.EmailField(max_length=35, blank=False)
+
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    email = models.EmailField(max_length=35, unique=True)
     idade = models.IntegerField(blank=True)
     cidade = models.CharField(max_length=20, blank=True)
     profissao = models.CharField(max_length=20, blank=True)
 
+
     def __str__(self):
         return 'Bem vindo', self.primeiro_nome
+
+    def __str__(self):
+        return self.email
 
 
 class Categoria(models.Model):

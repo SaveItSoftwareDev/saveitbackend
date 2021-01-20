@@ -15,12 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from accounts.urls import accounts_urlpatterns
 
 urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
+
+
+
     path('', include('apiSaveIt.urls')),
 
-
 ]
+
+urlpatterns += accounts_urlpatterns
+
