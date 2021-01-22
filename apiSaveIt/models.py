@@ -4,21 +4,23 @@ from django.contrib.auth.models import User
 
 class Perfil(models.Model):
 
-    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    id_perfil = models.AutoField(primary_key=True)
+    user = models.OneToOneField(User, null=False, on_delete=models.CASCADE)
     email = models.EmailField(max_length=35, unique=True)
     idade = models.IntegerField(blank=True)
     cidade = models.CharField(max_length=20, blank=True)
     profissao = models.CharField(max_length=20, blank=True)
 
-
     def __str__(self):
-        return 'Bem vindo', self.primeiro_nome
+        return 'Bem vindo', self.email
 
     def __str__(self):
         return self.email
 
 
 class Categoria(models.Model):
+
+    id_categoria = models.AutoField(primary_key=True)
     id_utilizador = models.ForeignKey(Perfil, on_delete=models.CASCADE)
     nome = models.CharField(max_length=20, blank=False)
 
@@ -27,6 +29,7 @@ class Categoria(models.Model):
 
 
 class SubCategoria(models.Model):
+    id_subcategoria = models.AutoField(primary_key=True)
     id_utilizador = models.ForeignKey(Perfil, on_delete=models.CASCADE)
     id_categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     nome = models.CharField(max_length=20, blank=False)
@@ -36,6 +39,7 @@ class SubCategoria(models.Model):
 
 
 class Planeamento(models.Model):
+    id_planeamento = models.AutoField(primary_key=True)
     id_utilizador = models.ForeignKey(Perfil, on_delete=models.CASCADE)
     montante_limite = models.DecimalField(max_digits=6, decimal_places=2, blank=False)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
@@ -48,6 +52,7 @@ class Planeamento(models.Model):
 
 
 class Conta(models.Model):
+    id_conta = models.AutoField(primary_key=True)
     id_utilizador = models.ForeignKey(Perfil, on_delete=models.CASCADE)
     nome = models.CharField(max_length=20, blank=False)
     saldo = models.DecimalField(default=0, max_digits=1000, decimal_places=2, blank=True)
@@ -60,6 +65,7 @@ class Conta(models.Model):
 
 
 class Invest(models.Model):
+    id_invest = models.AutoField(primary_key=True)
     nome = models.CharField(max_length=20, blank=False)
     id_utilizador = models.ForeignKey(Perfil, on_delete=models.CASCADE)
     montante = models.DecimalField(max_digits=10, decimal_places=2, blank=False)
@@ -73,6 +79,7 @@ class Invest(models.Model):
 
 
 class Registo(models.Model):
+    id_registo = models.AutoField(primary_key=True)
     id_conta = models.ForeignKey(Conta, on_delete=models.CASCADE)
     id_utilizador = models.ForeignKey(Perfil, on_delete=models.CASCADE)
     tipo = models.CharField(max_length=30, blank=False)
@@ -90,6 +97,7 @@ class Registo(models.Model):
 
 
 class Alert(models.Model):
+    id_alert = models.AutoField(primary_key=True)
     id_planeamento = models.ForeignKey(Invest, on_delete=models.CASCADE)
     id_utilizador = models.ForeignKey(Perfil, on_delete=models.CASCADE)
     id_categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)

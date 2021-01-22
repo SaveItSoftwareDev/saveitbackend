@@ -4,10 +4,6 @@
     <expand>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
       <path>
@@ -19,26 +15,24 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="813258f4-4ac1-4ae7-bd9e-5e57e6164fc1" name="Default Changelist" comment="correção da visualizacao de dados em formato json">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/FinalProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FinalProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/FinalProject/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apiSaveIt/.idea/apiSaveIt.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apiSaveIt/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apiSaveIt/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apiSaveIt/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apiSaveIt/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apiSaveIt/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/migrations/0002_auto_20210119_1331.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/migrations/0003_auto_20210120_1933.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/migrations/0004_auto_20210120_1938.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/migrations/0005_auto_20210120_2005.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apiSaveIt/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apiSaveIt/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +52,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="bb39a19d-5220-4c85-b4e3-c670f883afbe" />
+  <component name="JupyterTrust" id="18fc5722-d961-43d9-a0b5-f23d64369f25" />
   <component name="ProjectId" id="1lf5G2k3QBUnok8VNQRjO8gjZ8r" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -66,11 +60,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -81,7 +75,7 @@
       <recent name="C:\Users\tiago\PycharmProjects\backend\saveitbackend" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django Server.saveitbackend">
     <configuration name="Unnamed (1)" type="Python.DjangoServer" factoryName="Django server" nameIsGenerated="true">
       <module name="FinalProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -91,6 +85,30 @@
       </envs>
       <option name="SDK_HOME" value="C:\Users\tiago\PycharmProjects\FinalProject\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/apiSaveIt" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="saveitbackend" type="Python.DjangoServer" factoryName="Django server">
+      <module name="saveitbackend" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="FinalProject.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -139,6 +157,8 @@
       <workItem from="1610812576642" duration="836000" />
       <workItem from="1610813437375" duration="257000" />
       <workItem from="1610813850074" duration="1326000" />
+      <workItem from="1611324597141" duration="348000" />
+      <workItem from="1611324972868" duration="3369000" />
     </task>
     <task id="LOCAL-00001" summary="atualizacao nos modelos e dados na bd">
       <created>1608398027126</created>
@@ -171,7 +191,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
@@ -194,45 +214,52 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="508" y="236" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1610813456011" />
-    <state x="223" y="0" width="1089" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610815107567">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="209" y="0" width="1089" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611324550361">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="209" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1611324550361" />
     <state x="223" y="0" width="1089" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1610815107567" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1610815141805">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610815141805" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1610815187397">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1611347462452">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1611347462452" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610815187397" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1610815187396">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1611347462450">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1611347462450" />
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610815187396" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1610815187396">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1611347462449">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1611347462449" />
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610815187396" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1610815187396">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1611347462451">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1611347462451" />
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610815187396" />
     <state x="532" y="115" key="RollbackChangesDialog" timestamp="1610629893295">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="532" y="115" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1610629893295" />
-    <state x="117" y="40" key="SettingsEditor" timestamp="1610813488223">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="110" y="44" key="SettingsEditor" timestamp="1611325105529">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="110" y="44" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1611325105529" />
     <state x="117" y="40" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1610813488223" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608587389235">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608587389235" />
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608587220321">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="549" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611341858114">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="549" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1611341858114" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1608587220321" />
   </component>
 </project>

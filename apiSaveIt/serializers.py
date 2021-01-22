@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username',)
+        fields = ('id_user', 'username',)
 
 
 class UserSerializerWithToken(serializers.ModelSerializer):
@@ -37,37 +37,37 @@ class UserSerializerWithToken(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('token', 'username', 'password')
+        fields = ('id_user', 'token', 'username', 'password')
 
 class PerfilSerializer(serializers.ModelSerializer):
     class Meta:
         model = Perfil
-        fields = ['id', 'user', 'idade', 'email', 'cidade', 'profissao']
+        fields = ['id_perfil', 'user', 'idade', 'email', 'cidade', 'profissao']
 
 class CategoriaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Categoria
-        fields = ['id_utilizador', 'nome']
+        fields = ['id_categoria','id_utilizador', 'nome']
 
 class SubCategoriaSerializer(serializers.ModelSerializer):
     class Meta:
         model = SubCategoria
-        fields = ['id_utilizador', 'id_categoria', 'nome']
+        fields = ['id_subcategoria','id_utilizador', 'id_categoria', 'nome']
 
 class PlaneamentoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Planeamento
-        fields = ['id_utilizador', 'montante_limite', 'categoria', 'sub_categoria', 'prazo']
+        fields = ['id_planeamento','id_utilizador', 'montante_limite', 'categoria', 'sub_categoria', 'prazo']
 
 class ContaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Conta
-        fields = ['id_utilizador', 'nome', 'saldo', 'tipo']
+        fields = ['id_conta', 'id_utilizador', 'nome', 'saldo', 'tipo']
 
 class InvestSerializer(serializers.ModelSerializer):
     class Meta:
         model = Invest
-        fields = ['id_utilizador', 'nome', 'montante', 'numero', 'data']
+        fields = ['id_invest', 'id_utilizador', 'nome', 'montante', 'numero', 'data']
 
 class RegistoSerializer(serializers.ModelSerializer):
     class Meta:
