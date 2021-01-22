@@ -6,7 +6,6 @@ class Perfil(models.Model):
 
     id_perfil = models.AutoField(primary_key=True)
     user = models.OneToOneField(User, null=False, on_delete=models.CASCADE)
-    email = models.EmailField(max_length=35, unique=True)
     idade = models.IntegerField(blank=True)
     cidade = models.CharField(max_length=20, blank=True)
     profissao = models.CharField(max_length=20, blank=True)
