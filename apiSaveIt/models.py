@@ -71,7 +71,7 @@ class Registo(models.Model):
 
     def __str__(self):
         return 'Planeamento: {} {} {}'.format(self.id_registo, self.id_conta, self.tipo, self.descricao,
-                                              self.categoria, self.sub_categoria, self.montante, self.data)
+                                              self.categoria, self.sub_categoria, self.montante, self.data, Categoria.nome)
 
 
 class Alert(models.Model):
