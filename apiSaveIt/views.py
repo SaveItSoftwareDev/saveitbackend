@@ -397,7 +397,7 @@ class InvestViewSet(viewsets.ModelViewSet):
 
 class RegistoViewSet(viewsets.ModelViewSet):
     serializer_class = RegistoSerializer
-    queryset = Registo.objects.all()
+    queryset = Registo.objects.select_related('categoria_id')
 
 
 class AlertViewSet(viewsets.ModelViewSet):

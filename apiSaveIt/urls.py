@@ -41,7 +41,7 @@ urlpatterns = [
     path('contas/<int:conta_id>/', views.conta_detalhe),
     path('investimento/', views.criar_invest),
     path('registo/', views.criar_registo),
-    path('registo/<int:registo_id>/', views.invest_detalhe),
+    path('registo/<int:registo_id>/', views.registo_detalhe),
     path('alertas/', views.criar_alert),
     path('alertas/<int:alert_id>/', views.alert_detalhe),
     path('accounts/', include('django.contrib.auth.urls')),
