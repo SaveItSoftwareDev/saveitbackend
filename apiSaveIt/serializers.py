@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from rest_framework_jwt.settings import api_settings
 
-from .models import Perfil, Categoria, SubCategoria, Planeamento, Conta, Invest, Registo, Alert
+from .models import Categoria, SubCategoria, Planeamento, Conta, Invest, Registo, Alert
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from rest_framework.validators import UniqueValidator
@@ -39,42 +39,37 @@ class UserSerializerWithToken(serializers.ModelSerializer):
         model = User
         fields = ('id_user', 'token', 'username', 'password')
 
-class PerfilSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Perfil
-        fields = ['id_perfil', 'user', 'idade', 'cidade', 'profissao']
-
 class CategoriaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Categoria
-        fields = ['id_categoria','id_utilizador', 'nome']
+        fields = ['id_categoria', 'nome']
 
 class SubCategoriaSerializer(serializers.ModelSerializer):
     class Meta:
         model = SubCategoria
-        fields = ['id_subcategoria','id_utilizador', 'id_categoria', 'nome']
+        fields = ['id_subcategoria', 'id_categoria', 'nome']
 
 class PlaneamentoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Planeamento
-        fields = ['id_planeamento','id_utilizador', 'montante_limite', 'categoria', 'sub_categoria', 'prazo']
+        fields = ['id_planeamento', 'montante_limite', 'categoria', 'sub_categoria', 'prazo']
 
 class ContaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Conta
-        fields = ['id_conta', 'id_utilizador', 'nome', 'saldo', 'tipo']
+        fields = ['id_conta', 'nome', 'saldo', 'tipo']
 
 class InvestSerializer(serializers.ModelSerializer):
     class Meta:
         model = Invest
-        fields = ['id_invest', 'id_utilizador', 'nome', 'montante', 'numero', 'data']
+        fields = ['id_invest', 'nome', 'montante', 'numero', 'data']
 
 class RegistoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Registo
-        fields = ['id_conta', 'id_utilizador', 'tipo', 'descricao', 'categoria', 'sub_categoria', 'montante', 'data']
+        fields = ['id_conta', 'tipo', 'descricao', 'categoria', 'sub_categoria', 'montante', 'data']
 
 class AlertSerializer(serializers.ModelSerializer):
     class Meta:
         model = Alert
-        fields = ['id_planeamento', 'id_utilizador', 'id_categoria', 'id_sub_categoria', 'descricao', 'dataInicial', 'dataFinal', 'montante', 'montanteLimite']
+        fields = ['id_planeamento', 'id_categoria', 'id_sub_categoria', 'descricao', 'dataInicial', 'dataFinal', 'montante', 'montanteLimite']

@@ -22,9 +22,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="813258f4-4ac1-4ae7-bd9e-5e57e6164fc1" name="Default Changelist" comment="Acerto de campo">
+    <list default="true" id="813258f4-4ac1-4ae7-bd9e-5e57e6164fc1" name="Default Changelist" comment="Correção da correção do campo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apiSaveIt/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apiSaveIt/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apiSaveIt/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apiSaveIt/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apiSaveIt/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +153,8 @@
       <workItem from="1610813437375" duration="257000" />
       <workItem from="1610813850074" duration="1326000" />
       <workItem from="1611324597141" duration="348000" />
-      <workItem from="1611324972868" duration="4174000" />
+      <workItem from="1611324972868" duration="4660000" />
+      <workItem from="1611418079745" duration="1041000" />
     </task>
     <task id="LOCAL-00001" summary="atualizacao nos modelos e dados na bd">
       <created>1608398027126</created>
@@ -180,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611347876027</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Correção da correção do campo">
+      <created>1611408618993</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1611408618993</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +226,8 @@
     <MESSAGE value="correção da visualizacao de dados em formato json" />
     <MESSAGE value="Acrescento ID's pedido Irene" />
     <MESSAGE value="Acerto de campo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Acerto de campo" />
+    <MESSAGE value="Correção da correção do campo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correção da correção do campo" />
   </component>
   <component name="WindowStateProjectService">
     <state x="508" y="236" key="#Notifications" timestamp="1610813456011">
@@ -231,25 +243,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610815141805" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1611408514226">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1611418838697">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1611408514226" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1611418838697" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610815187397" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1611408514225">
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1611418838695">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1611408514225" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1611418838695" />
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610815187396" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1611408514224">
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1611418838694">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1611408514224" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1611418838694" />
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610815187396" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1611408514225">
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1611418838696">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1611408514225" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1611418838696" />
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610815187396" />
     <state x="532" y="115" key="RollbackChangesDialog" timestamp="1610629893295">
       <screen x="0" y="0" width="1536" height="824" />
@@ -260,10 +272,10 @@
     </state>
     <state x="110" y="44" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1611325105529" />
     <state x="117" y="40" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1610813488223" />
-    <state x="338" y="158" key="Vcs.Push.Dialog.v2" timestamp="1611347884073">
+    <state x="338" y="158" key="Vcs.Push.Dialog.v2" timestamp="1611408657704">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="338" y="158" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1611347884073" />
+    <state x="338" y="158" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1611408657704" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608587389235" />
     <state x="549" y="356" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611341858114">
       <screen x="0" y="0" width="1440" height="900" />
