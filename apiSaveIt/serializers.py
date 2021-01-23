@@ -42,7 +42,7 @@ class UserSerializerWithToken(serializers.ModelSerializer):
 class PerfilSerializer(serializers.ModelSerializer):
     class Meta:
         model = Perfil
-        fields = ['id_perfil', 'user', 'idade', 'email', 'cidade', 'profissao']
+        fields = ['id_perfil', 'user', 'idade', 'cidade', 'profissao']
 
 class CategoriaSerializer(serializers.ModelSerializer):
     class Meta:
