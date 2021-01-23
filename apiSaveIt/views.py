@@ -295,7 +295,7 @@ def criar_registo(request):
     POST: Cria um novo registo
     """
     if request.method == 'GET':
-        registo = Registo.objects.select_related('categoria')
+        registo = Registo.objects.all()
         serializer = serializers.RegistoSerializer(registo, many=True)
         # print(serializer.data)
         return JsonResponse(serializer.data, safe=False)
@@ -397,7 +397,7 @@ class InvestViewSet(viewsets.ModelViewSet):
 
 class RegistoViewSet(viewsets.ModelViewSet):
     serializer_class = RegistoSerializer
-    queryset = Registo.objects.select_related('categoria_id')
+    queryset = Registo.objects.all()
 
 
 class AlertViewSet(viewsets.ModelViewSet):

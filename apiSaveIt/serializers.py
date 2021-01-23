@@ -8,14 +8,12 @@ from rest_framework.validators import UniqueValidator
 
 
 class UserSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = User
         fields = ('id_user', 'username',)
 
 
 class UserSerializerWithToken(serializers.ModelSerializer):
-
     token = serializers.SerializerMethodField()
     password = serializers.CharField(write_only=True)
 
@@ -39,37 +37,47 @@ class UserSerializerWithToken(serializers.ModelSerializer):
         model = User
         fields = ('id_user', 'token', 'username', 'password')
 
-class CategoriaSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Categoria
-        fields = ['id_categoria', 'nome']
 
 class SubCategoriaSerializer(serializers.ModelSerializer):
     class Meta:
         model = SubCategoria
         fields = ['id_subcategoria', 'id_categoria', 'nome']
 
+
 class PlaneamentoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Planeamento
         fields = ['id_planeamento', 'montante_limite', 'categoria', 'sub_categoria', 'prazo']
+
 
 class ContaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Conta
         fields = ['id_conta', 'nome', 'saldo', 'tipo']
 
+
 class InvestSerializer(serializers.ModelSerializer):
     class Meta:
         model = Invest
         fields = ['id_invest', 'nome', 'montante', 'numero', 'data']
 
+
+class CategoriaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Categoria
+        fields = ("id_categoria", "nome")
+
+
 class RegistoSerializer(serializers.ModelSerializer):
+    categoria = CategoriaSerializer(many=False)
+
     class Meta:
         model = Registo
         fields = ['id_conta', 'tipo', 'descricao', 'categoria', 'sub_categoria', 'montante', 'data']
 
+
 class AlertSerializer(serializers.ModelSerializer):
     class Meta:
         model = Alert
-        fields = ['id_planeamento', 'id_categoria', 'id_sub_categoria', 'descricao', 'dataInicial', 'dataFinal', 'montante', 'montanteLimite']
+        fields = ['id_planeamento', 'id_categoria', 'id_sub_categoria', 'descricao', 'dataInicial', 'dataFinal',
+                  'montante', 'montanteLimite']
