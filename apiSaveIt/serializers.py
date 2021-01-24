@@ -38,12 +38,6 @@ class UserSerializerWithToken(serializers.ModelSerializer):
         fields = ('id_user', 'token', 'username', 'password')
 
 
-class PlaneamentoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Planeamento
-        fields = ['id_planeamento', 'montante_limite', 'categoria', 'sub_categoria', 'prazo']
-
-
 class ContaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Conta
@@ -69,12 +63,28 @@ class SubCategoriaSerializer(serializers.ModelSerializer):
         model = SubCategoria
         fields = ['id_subcategoria', 'id_categoria', 'nome']
 
+
 class SubCategoriaPUTSerializer(serializers.ModelSerializer):
     id_categoria = CategoriaSerializer(many=False)
 
     class Meta:
         model = SubCategoria
         fields = ['id_subcategoria', 'id_categoria', 'nome']
+
+
+class PlaneamentoSerializer(serializers.ModelSerializer):
+    categoria = CategoriaSerializer(many=False)
+    sub_categoria = SubCategoriaSerializer(many=False)
+
+    class Meta:
+        model = Planeamento
+        fields = ['id_planeamento', 'montante_limite', 'categoria', 'sub_categoria', 'prazo']
+
+
+class PlaneamentoPUTSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Planeamento
+        fields = ['id_planeamento', 'montante_limite', 'categoria', 'sub_categoria', 'prazo']
 
 
 class RegistoSerializer(serializers.ModelSerializer):
