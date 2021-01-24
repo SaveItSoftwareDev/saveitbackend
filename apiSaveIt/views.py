@@ -310,6 +310,7 @@ def criar_registo(request):
 
 
 def registo_detalhe(request, registo_id):
+
     """
     GET: Retorna um registo baseado num ID
     PATCH: Altera um registo baseado num ID
