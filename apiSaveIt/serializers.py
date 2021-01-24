@@ -69,6 +69,13 @@ class SubCategoriaSerializer(serializers.ModelSerializer):
         model = SubCategoria
         fields = ['id_subcategoria', 'id_categoria', 'nome']
 
+class SubCategoriaPUTSerializer(serializers.ModelSerializer):
+    id_categoria = CategoriaSerializer(many=False)
+
+    class Meta:
+        model = SubCategoria
+        fields = ['id_subcategoria', 'id_categoria', 'nome']
+
 
 class RegistoSerializer(serializers.ModelSerializer):
     categoria = CategoriaSerializer(many=False)
@@ -80,11 +87,24 @@ class RegistoSerializer(serializers.ModelSerializer):
         fields = ['id_conta', 'tipo', 'descricao', 'categoria', 'sub_categoria', 'montante', 'data']
 
 
+class RegistoPUTSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Registo
+        fields = ['id_conta', 'tipo', 'descricao', 'categoria', 'sub_categoria', 'montante', 'data']
+
+
 class AlertSerializer(serializers.ModelSerializer):
     id_planeamento = PlaneamentoSerializer(many=False)
     id_categoria = CategoriaSerializer(many=False)
     id_sub_categoria = SubCategoriaSerializer(many=False)
 
+    class Meta:
+        model = Alert
+        fields = ['id_planeamento', 'id_categoria', 'id_sub_categoria', 'descricao', 'dataInicial', 'dataFinal',
+                  'montante', 'montanteLimite']
+
+
+class AlertPUTSerializer(serializers.ModelSerializer):
     class Meta:
         model = Alert
         fields = ['id_planeamento', 'id_categoria', 'id_sub_categoria', 'descricao', 'dataInicial', 'dataFinal',

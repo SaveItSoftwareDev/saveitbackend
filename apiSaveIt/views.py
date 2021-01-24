@@ -138,7 +138,7 @@ def criar_subcategoria(request):
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)
-        serializer = serializers.SubCategoriaSerializer(data=data)
+        serializer = serializers.SubCategoriaPUTSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(serializer.data, status=201)
@@ -302,7 +302,7 @@ def criar_registo(request):
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)
-        serializer = serializers.RegistoSerializer(data=data)
+        serializer = serializers.RegistoPUTSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(serializer.data, status=201)
@@ -344,7 +344,7 @@ def criar_alert(request):
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)
-        serializer = serializers.AlertSerializer(data=data)
+        serializer = serializers.AlertPUTSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(serializer.data, status=201)
