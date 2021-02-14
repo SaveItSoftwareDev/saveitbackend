@@ -107,7 +107,7 @@ def criar_categoria(request):
     # return JsonResponse(response_data, safe=False, json_dumps_params={'ensure_ascii': False})
 
 
-@permission_classes((IsAuthenticated,))
+
 def categoria_detalhe(request, categoria_id):
     """
     GET: Retorna as categorias baseado num ID
@@ -292,7 +292,7 @@ def invest_detalhe(request, invest_id):
         return JsonResponse(status=status.HTTP_204_NO_CONTENT)
 
 
-@permission_classes((IsAuthenticated,))
+
 @api_view(['GET', 'POST'])
 def criar_registo(request):
     """
