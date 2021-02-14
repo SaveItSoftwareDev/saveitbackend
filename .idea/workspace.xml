@@ -24,6 +24,9 @@
   <component name="ChangeListManager">
     <list default="true" id="813258f4-4ac1-4ae7-bd9e-5e57e6164fc1" name="Default Changelist" comment="Separação de GET e POST em endpoints principais">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiSaveIt/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apiSaveIt/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apiSaveIt/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apiSaveIt/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,7 +158,7 @@
       <workItem from="1611422404366" duration="9518000" />
       <workItem from="1611497809407" duration="3270000" />
       <workItem from="1613260790896" duration="1125000" />
-      <workItem from="1613309111890" duration="4190000" />
+      <workItem from="1613309111890" duration="9397000" />
     </task>
     <task id="LOCAL-00001" summary="atualizacao nos modelos e dados na bd">
       <created>1608398027126</created>

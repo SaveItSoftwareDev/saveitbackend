@@ -1,7 +1,7 @@
 # Imports necessários de módulos a serem utilizados no projeto
 
 from django.http import HttpResponseRedirect
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, Http404
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.permissions import IsAuthenticated
@@ -230,6 +230,8 @@ def criar_conta(request):
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
 
+
+
 @csrf_exempt
 def conta_detalhe(request, conta_id):
     """
@@ -246,9 +248,35 @@ def conta_detalhe(request, conta_id):
         serializer = serializers.ContaSerializer(contas)
         return JsonResponse(serializer.data)
 
+
+    elif request.method == 'PATCH':
+        serializer = serializers.ContaSerializer(contas, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
     elif request.method == 'DELETE':
-        contas.delete()
-        return JsonResponse(status=status.HTTP_204_NO_CONTENT)
+
+        try:
+            contas = Conta.objects.get(pk=conta_id)
+        except Conta.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+            contas.delete()
+
+        return Response("apagou")
+
+
+class apagar_conta(APIView):
+    # Apagar uma conta
+    def delete(self, request, conta_id):
+        try:
+            conta = Conta.objects.get(pk=conta_id)
+        except Conta.DoesNotExist:
+            raise Http404
+        conta.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 @api_view(['GET', 'POST'])

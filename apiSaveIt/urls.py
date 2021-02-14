@@ -44,6 +44,7 @@ urlpatterns = [
     path('registo/<int:registo_id>/', views.registo_detalhe),
     path('alertas/', views.criar_alert),
     path('alertas/<int:alert_id>/', views.alert_detalhe),
+    path('apagar_conta/<int:conta_id>/', views.apagar_conta.as_view(), name="teste"),
     path('accounts/', include('django.contrib.auth.urls')),
     re_path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
