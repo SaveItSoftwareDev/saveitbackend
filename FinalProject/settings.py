@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
 REST_FRAMEWORK = {
@@ -68,7 +69,7 @@ REST_FRAMEWORK = {
 }
 
 DJOSER = {
-    "USER_ID_FIELD": "username"
+    "USER_ID_FIELD": "username",
 }
 
 ROOT_URLCONF = 'FinalProject.urls'
@@ -101,7 +102,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'SaveIT3',
         'USER': 'postgres',
-        'PASSWORD': 'admin',
+        'PASSWORD': 'Tiagosilva7101',
         'HOST': 'localhost',
         'PORT': '5432',
     }
