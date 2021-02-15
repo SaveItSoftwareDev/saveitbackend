@@ -1,19 +1,9 @@
-from django.urls import path
-from .views import CategoriaViewSet, SubCategoriaViewSet, PlaneamentoViewSet, ContaViewSet, InvestViewSet, AlertViewSet, RegistoViewSet
-from rest_framework_jwt.views import obtain_jwt_token
-from rest_framework.routers import DefaultRouter
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
-from .views import conta_detalhe
 from django.urls import re_path
-from django.conf.urls import url
 from . import views
-from .views import Conta
-from django.contrib import admin
 from django.urls import path, include
-from rest_framework_jwt.views import obtain_jwt_token
-from rest_framework.routers import DefaultRouter
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -28,37 +18,28 @@ schema_view = get_schema_view(
    permission_classes=(permissions.AllowAny,),
 )
 
-#app_name = 'apiSaveIt'
+app_name = 'apiSaveIt'
 
-router = DefaultRouter()
 urlpatterns = [
 
     path('categorias/', views.criar_categoria),
-    #path('categorias/<int:categoria_id>/', views.categoria_detalhe),
     path('categorias/<int:categoria_id>/', views.CategoriasDetalhe.as_view()),
     path('sub_categorias/', views.criar_subcategoria),
-    path('sub_categorias7<int:sub_categoria_id>', views.subcategoria_detalhe),
+    path('sub_categorias/<int:sub_categoria_id>/', views.SubCategoriaDetalhe.as_view()),
     path('planeamentos/', views.criar_planeamento),
-    path('planeamentos/<int:planeamento_id>/', views.planeamento_detalhe),
-    #path('contas/', views.criar_conta),
+    path('planeamentos/<int:planeamento_id>/', views.PlaneamentosDetalhe.as_view()),
+    path('contas/', views.criar_conta),
     path('contas/<int:conta_id>/', views.ContasList.as_view()),
     path('investimento/', views.criar_invest),
+    path('investimento/<int:invest_id>/', views.InvestDetalhes.as_view()),
     path('registo/', views.criar_registo),
-    path('registo/<int:registo_id>/', views.registo_detalhe),
+    path('registo/<int:registo_id>/', views.RegistoDetalhes.as_view()),
     path('alertas/', views.criar_alert),
-    path('alertas/<int:alert_id>/', views.alert_detalhe),
+    path('alertas/<int:alert_id>/', views.AlertaDetalhes.as_view()),
     path('accounts/', include('django.contrib.auth.urls')),
     re_path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
 
-router = DefaultRouter()
-router.register('categorias', CategoriaViewSet, basename='categoria_viewsets')
-router.register('sub_categorias', SubCategoriaViewSet, basename='sub_categoria_viewsets')
-router.register('planeamentos', PlaneamentoViewSet, basename='planeamento_viewsets')
-router.register('contas', ContaViewSet, basename='contas_viewsets')
-router.register('investimento', InvestViewSet, basename='investimento_viewsets')
-router.register('registo', RegistoViewSet, basename='registo_viewsets')
-router.register('alertas', AlertViewSet, basename='alertas_viewsets')
-urlpatterns += router.urls
+
 
 
