@@ -74,6 +74,7 @@ class Registo(models.Model):
                                               self.categoria, self.sub_categoria, self.montante, self.data)
 
 
+
 class Alert(models.Model):
     id_alert = models.AutoField(primary_key=True)
     id_planeamento = models.ForeignKey(Invest, on_delete=models.CASCADE)

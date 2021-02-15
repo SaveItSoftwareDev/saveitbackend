@@ -106,8 +106,8 @@ def criar_categoria(request):
         return JsonResponse(serializer.errors, status=400)
     # return JsonResponse(response_data, safe=False, json_dumps_params={'ensure_ascii': False})
 
-
-
+'''
+@api_view(['GET', 'DELETE'])
 def categoria_detalhe(request, categoria_id):
     """
     GET: Retorna as categorias baseado num ID
@@ -127,6 +127,26 @@ def categoria_detalhe(request, categoria_id):
         categoria.delete()
         return JsonResponse(status=status.HTTP_204_NO_CONTENT)
 
+'''
+
+
+class CategoriasDetalhe(APIView):
+
+    def get(self, request, categoria_id):
+        try:
+            categorias = Categoria.objects.get(pk=categoria_id)
+        except Categoria.DoesNotExist:
+            raise Http404
+        serializer = serializers.CategoriaSerializer(categorias)
+        return Response(serializer.data)
+
+    def delete(self, request, categoria_id):
+        try:
+            categorias = Categoria.objects.get(pk=categoria_id)
+        except Categoria.DoesNotExist:
+            raise Http404
+        categorias.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET', 'POST'])
 def criar_subcategoria(request):
@@ -232,7 +252,7 @@ def criar_conta(request):
 
 
 
-@csrf_exempt
+
 def conta_detalhe(request, conta_id):
     """
     GET: Retorna a conta baseado num ID
@@ -257,19 +277,17 @@ def conta_detalhe(request, conta_id):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-    elif request.method == 'DELETE':
+#@csrf_exempt
+class ContasList(APIView):
 
+    def get(self, request, conta_id):
         try:
             contas = Conta.objects.get(pk=conta_id)
         except Conta.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
-            contas.delete()
+            raise Http404
+        serializer = serializers.ContaSerializer(contas)
+        return Response(serializer.data)
 
-        return Response("apagou")
-
-
-class apagar_conta(APIView):
-    # Apagar uma conta
     def delete(self, request, conta_id):
         try:
             conta = Conta.objects.get(pk=conta_id)
@@ -277,6 +295,9 @@ class apagar_conta(APIView):
             raise Http404
         conta.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+
 
 
 @api_view(['GET', 'POST'])
