@@ -10,13 +10,13 @@ from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework.decorators import api_view
 
-categoria_response = openapi.Response('Descrição da resposta', serializers.CategoriaSerializer)
-subcategoria_response = openapi.Response('Descrição da resposta', serializers.SubCategoriaPUTSerializer)
-planeamento_response = openapi.Response('Descrição da resposta', serializers.PlaneamentoPUTSerializer)
-conta_response = openapi.Response('Descrição da resposta', serializers.ContaSerializer)
-investimento_response = openapi.Response('Descrição da resposta', serializers.InvestSerializer)
-registo_response = openapi.Response('Descrição da resposta', serializers.RegistoPUTSerializer)
-alerta_response = openapi.Response('Descrição da resposta', serializers.AlertPUTSerializer)
+categoria_response = openapi.Response('OK', serializers.CategoriaSerializer)
+subcategoria_response = openapi.Response('OK', serializers.SubCategoriaPUTSerializer)
+planeamento_response = openapi.Response('OK', serializers.PlaneamentoPUTSerializer)
+conta_response = openapi.Response('OK', serializers.ContaSerializer)
+investimento_response = openapi.Response('OK', serializers.InvestSerializer)
+registo_response = openapi.Response('OK', serializers.RegistoPUTSerializer)
+alerta_response = openapi.Response('OK', serializers.AlertPUTSerializer)
 
 
 @swagger_auto_schema(method='get', responses={200: categoria_response})
@@ -112,7 +112,7 @@ class SubCategoriaDetalhe(APIView):
 
     def patch(self, request, subcategoria_id):
         subcategorias = SubCategoria.objects.get(pk=subcategoria_id)
-        serializer = serializers.SubCategoriaSerializer(subcategorias, data=request.data)
+        serializer = serializers.SubCategoriaPUTSerializer(subcategorias, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -166,7 +166,7 @@ class PlaneamentosDetalhe(APIView):
 
     def patch(self, request, planeamento_id):
         planeamento = Planeamento.objects.get(pk=planeamento_id)
-        serializer = serializers.PlaneamentoSerializer(planeamento, data=request.data)
+        serializer = serializers.PlaneamentoPUTSerializer(planeamento, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -328,7 +328,7 @@ class RegistoDetalhes(APIView):
 
     def patch(self, request, registo_id):
         registo = Registo.objects.get(pk=registo_id)
-        serializer = serializers.RegistoSerializer(registo, data=request.data)
+        serializer = serializers.RegistoPUTSerializer(registo, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -377,7 +377,7 @@ class AlertaDetalhes(APIView):
             alert = Alert.objects.get(pk=alert_id)
         except Alert.DoesNotExist:
             raise Http404
-        serializer = serializers.RegistoSerializer(alert)
+        serializer = serializers.AlertSerializer(alert)
         return Response(serializer.data)
 
     def patch(self, request, alert_id):
@@ -385,7 +385,7 @@ class AlertaDetalhes(APIView):
             alert = Alert.objects.get(pk=alert_id)
         except Alert.DoesNotExist:
             raise Http404
-        serializer = serializers.RegistoSerializer(alert, data=request.data)
+        serializer = serializers.AlertPUTSerializer(alert, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

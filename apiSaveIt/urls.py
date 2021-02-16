@@ -8,7 +8,7 @@ from django.urls import path, include
 schema_view = get_schema_view(
    openapi.Info(
       title="SaveIt API",
-      default_version='V2',
+      default_version='V3',
       description="SaveIt API",
       terms_of_service="https://www.google.com/policies/terms/",
       contact=openapi.Contact(email="SaveIt@google.com"),
