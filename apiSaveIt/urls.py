@@ -4,11 +4,12 @@ from rest_framework import permissions
 from django.urls import re_path
 from . import views
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 
 schema_view = get_schema_view(
    openapi.Info(
       title="SaveIt API",
-      default_version='V3',
+      default_version='V2',
       description="SaveIt API",
       terms_of_service="https://www.google.com/policies/terms/",
       contact=openapi.Contact(email="SaveIt@google.com"),
@@ -20,6 +21,7 @@ schema_view = get_schema_view(
 
 app_name = 'apiSaveIt'
 
+router = DefaultRouter()
 urlpatterns = [
 
     path('categorias/', views.criar_categoria),
@@ -40,6 +42,7 @@ urlpatterns = [
     re_path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
 
-
+router = DefaultRouter()
+urlpatterns += router.urls
 
 
